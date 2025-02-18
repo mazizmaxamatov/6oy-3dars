@@ -7,7 +7,7 @@ import Header from './components/header';
 
 function App() {
 
-  
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
       <Header />
 
       <div className='App max-w-[1440px] mx-auto' >
-
+          <h1>hello</h1>
 
         {data.map((post) => {
           return (
