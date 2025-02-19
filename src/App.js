@@ -30,7 +30,7 @@ function App() {
 
         {data.map((post) => {
           return (
-            <div className='border bg-[black] text-[#FFFFFF]'>
+            <div className='border bg-[black] text-[#FFFFFF] pl-[15px]'>
               <h1>{post.category}</h1>
               <h2>{post.price}</h2>
               <h3>{post.title}</h3>
