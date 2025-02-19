@@ -1,6 +1,17 @@
 import React, { Fragment } from 'react'
-
+import { useEffect, useState } from 'react';
 const Header = () => {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+            .then(response => response.json())
+            .then(json => setData(json));
+    }, []);
+
+
+    console.log(data);
     return (
 
         <Fragment>
@@ -95,6 +106,23 @@ const Header = () => {
                     </div>
                 </div>
             </menu>
+
+
+            <div className='App max-w-[1440px] mx-auto ' >
+                <h1>hello</h1>
+
+                {data.map((post) => {
+                    return (
+                        <div className='border bg-[black] text-[#FFFFFF] pl-[15px]'>
+                            <h1>{post.category}</h1>
+                            <h2>{post.price}</h2>
+                            <h3>{post.title}</h3>
+                            <p>{post.body}</p>
+                        </div>
+                    )
+                })}
+            </div>
+
 
         </Fragment>
 
